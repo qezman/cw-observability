@@ -13,3 +13,15 @@ module "iam" {
 
   project_name = var.project_name
 }
+
+module "compute" {
+  source = "./modules/compute"
+
+  project_name          = var.project_name
+  instance_type         = var.instance_type
+  instance_count        = var.instance_count
+  subnet_id             = module.networking.subnet_id
+  security_group_id     = module.networking.security_group_id
+  instance_profile_name = module.iam.instance_profile_name
+  key_name              = var.key_name
+}

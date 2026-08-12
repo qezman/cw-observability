@@ -55,3 +55,8 @@ variable "public_subnet_cidr" {
   type        = string
   default     = "10.0.1.0/24"
 }
+
+variable "key_name" {
+  description = "Name of an existing EC2 key pair in AWS (used for SSH access)"
+  type        = string
+} 
