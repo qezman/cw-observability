@@ -25,6 +25,7 @@ resource "aws_instance" "cluster" {
     vpc_security_group_ids = [var.security_group_id]
     iam_instance_profile = var.instance_profile_name
     key_name = var.key_name
+    monitoring             = true  # detailed monitoring - 1-min CPUUtilization, matches alarm period=60
 
      # Bootstrap placeholder
       user_data = <<-EOF
