@@ -12,3 +12,8 @@ output "mem_alarm_arns" {
     description = "ARNs of the memory usage alarms"
     value = aws_cloudwatch_metric_alarm.mem_high[*].arn
 }
+
+output "dashboard_url" {
+  description = "Direct link to the CloudWatch dashboard in the console"
+  value       = "https://${data.aws_region.current.name}.console.aws.amazon.com/cloudwatch/home?region=${data.aws_region.current.name}#dashboards:name=${aws_cloudwatch_dashboard.main.dashboard_name}"
+}
