@@ -16,7 +16,7 @@ resource "aws_cloudwatch_metric_alarm" "disk_high" {
     ok_actions            = [var.sns_topic_arn]
 
     dimensions = {
-        instanceId = var.instance_ids[count.index]
+        InstanceId = var.instance_ids[count.index]
         path = "/"
     }
 
@@ -40,10 +40,10 @@ resource "aws_cloudwatch_metric_alarm" "cpu_high" {
     threshold            = var.cpu_threshold
     alarm_description    = "CPU usage above ${var.cpu_threshold}% on instance ${count.index + 1}"
     alarm_actions        = [var.sns_topic_arn]
-    ok_actions            = [var.sns_topic_arn]
+    ok_actions           = [var.sns_topic_arn]
 
     dimensions = {
-        instanceId = var.instance_ids[count.index]
+        InstanceId = var.instance_ids[count.index]
     }
 
     tags = {
@@ -66,10 +66,10 @@ resource "aws_cloudwatch_metric_alarm" "mem_high" {
     threshold            = var.mem_threshold
     alarm_description    = "Memory usage above ${var.mem_threshold}% on instance ${count.index + 1}"
     alarm_actions        = [var.sns_topic_arn]
-    ok_actions            = [var.sns_topic_arn]
+    ok_actions           = [var.sns_topic_arn]
 
     dimensions = {
-        instanceId = var.instance_ids[count.index]
+        InstanceId = var.instance_ids[count.index]
     }
 
     tags = {
