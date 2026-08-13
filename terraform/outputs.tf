@@ -19,6 +19,11 @@ output "aws_account_id" {
 }
 
 output "topic_arn" {
-    description = "ARN of the SNS alarms topic (consumed by modules/monitoring)"
-    value = module.notifications.topic_arn
+  description = "ARN of the SNS alarms topic (consumed by modules/monitoring)"
+  value       = module.notifications.topic_arn
+}
+
+output "dashboard_url" {
+  description = "Direct link to the CloudWatch dashboard in the console"
+  value       = module.monitoring.dashboard_url
 }

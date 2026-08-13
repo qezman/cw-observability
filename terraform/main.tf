@@ -30,14 +30,14 @@ module "notifications" {
   source = "./modules/notifications"
 
   project_name = var.project_name
-  alarm_email = var.alarm_email
-  alarm_sms = var.alarm_sms
+  alarm_email  = var.alarm_email
+  alarm_sms    = var.alarm_sms
 }
 
 module "monitoring" {
   source = "./modules/monitoring"
 
-  project_name = var.project_name
+  project_name  = var.project_name
   instance_ids  = module.compute.instance_ids
   sns_topic_arn = module.notifications.topic_arn
 }
