@@ -1,0 +1,7 @@
+title: cw-observability
+description: Monitored EC2 cluster on AWS - Terraform build documentation
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
+url: https://qezman.github.io
+baseurl: /cw-observability
