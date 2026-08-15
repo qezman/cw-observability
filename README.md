@@ -79,3 +79,13 @@ terraform destroy -var-file="terraform.tfvars" -var-file="secrets.tfvars"
 ```
 
 Confirms removal of all 24 resources (VPC, subnet, IGW, route table, security group, IAM role/profile, 2x EC2 instances, 2x EIPs, SSM parameter/document/association, SNS topic/subscriptions, CloudWatch alarms x6, dashboard). No resources are excluded from destroy - this project has no S3 buckets, RDS instances, or anything else requiring manual deletion protection removal first.
+
+## Documentation
+
+Full setup guide, architecture decisions, and redeployment walkthrough:
+
+[CW Observability Documentation](https://qezman.github.io/cw-observability/)
+
+## Author
+
+**Kazeem**
